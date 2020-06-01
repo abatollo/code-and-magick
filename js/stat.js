@@ -7,7 +7,6 @@ var CLOUD_Y = 10;
 var GAP = 10;
 var TEXT_PADDING = 20;
 var PADDING = 50;
-var TEXT_WIDTH = 40;
 var BAR_WIDTH = 40;
 var BAR_HEIGHT = 120;
 
@@ -31,7 +30,7 @@ var getMaxElement = function (arr) {
   }
 
   return maxElement;
-}
+};
 
 window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
