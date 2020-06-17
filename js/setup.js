@@ -39,34 +39,21 @@ var EYES_COLOR_LIST = [
   'green'
 ];
 
-var wisards = [
-  {
-    name: '',
-    coatColor: '',
-    eyesColor: ''
-  },
-  {
-    name: '',
-    coatColor: '',
-    eyesColor: ''
-  },
-  {
-    name: '',
-    coatColor: '',
-    eyesColor: ''
-  },
-  {
-    name: '',
-    coatColor: '',
-    eyesColor: ''
-  }
-];
+var wisards = [];
 
-var generateRandomWizards = function (arr) {
-  for (var i = 0; i < arr.length; i++) {
-    arr[i].name = NAMES_LIST[Math.floor(Math.random() * NAMES_LIST.length)] + ' ' + SURNAMES_LIST[Math.floor(Math.random() * SURNAMES_LIST.length)];
-    arr[i].coatColor = COAT_COLOR_LIST[Math.floor(Math.random() * COAT_COLOR_LIST.length)];
-    arr[i].eyesColor = EYES_COLOR_LIST[Math.floor(Math.random() * EYES_COLOR_LIST.length)];
+var getRandomArrayItem = function (arr) {
+  var randomArrayItem = arr[Math.floor(Math.random() * arr.length)];
+
+  return randomArrayItem;
+}
+
+var generateRandomWizards = function (arr, arrLength) {
+  for (var i = 0; i < arrLength; i++) {
+    arr[i] = {
+      name: getRandomArrayItem(NAMES_LIST) + ' ' + getRandomArrayItem(SURNAMES_LIST),
+      coatColor: getRandomArrayItem(COAT_COLOR_LIST),
+      eyesColor: getRandomArrayItem(EYES_COLOR_LIST)
+    };
   }
 };
 
@@ -96,6 +83,6 @@ var hiddenBlock = document.querySelector('.setup');
 
 hiddenBlock.classList.remove('hidden');
 
-generateRandomWizards(wisards);
+generateRandomWizards(wisards, 4);
 
 renderWizards('#similar-wizard-template');
