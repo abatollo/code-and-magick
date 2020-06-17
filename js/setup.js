@@ -1,53 +1,54 @@
 'use strict';
 
-var NAMES_LIST = [
-  'Иван',
-  'Хуан Себастьян',
-  'Мария',
-  'Кристоф',
-  'Виктор',
-  'Юлия',
-  'Люпита',
-  'Вашингтон'
-];
-
-var SURNAMES_LIST = [
-  'да Марья',
-  'Верон',
-  'Мирабелла',
-  'Вальц',
-  'Онопко',
-  'Топольницкая',
-  'Нионго',
-  'Ирвинг'
-];
-
-var COAT_COLOR_LIST = [
-  'rgb(101, 137, 164)',
-  'rgb(241, 43, 107)',
-  'rgb(146, 100, 161)',
-  'rgb(56, 159, 117)',
-  'rgb(215, 210, 55)',
-  'rgb(0, 0, 0)'
-];
-
-var EYES_COLOR_LIST = [
-  'black',
-  'red',
-  'blue',
-  'yellow',
-  'green'
-];
-
-var wisards = [];
-
 var getRandomArrayItem = function (arr) {
   var randomArrayItem = arr[Math.floor(Math.random() * arr.length)];
 
   return randomArrayItem;
-}
+};
 
-var generateRandomWizards = function (arr, arrLength) {
+var generateRandomWizards = function (arrLength) {
+
+  var NAMES_LIST = [
+    'Иван',
+    'Хуан Себастьян',
+    'Мария',
+    'Кристоф',
+    'Виктор',
+    'Юлия',
+    'Люпита',
+    'Вашингтон'
+  ];
+
+  var SURNAMES_LIST = [
+    'да Марья',
+    'Верон',
+    'Мирабелла',
+    'Вальц',
+    'Онопко',
+    'Топольницкая',
+    'Нионго',
+    'Ирвинг'
+  ];
+
+  var COAT_COLOR_LIST = [
+    'rgb(101, 137, 164)',
+    'rgb(241, 43, 107)',
+    'rgb(146, 100, 161)',
+    'rgb(56, 159, 117)',
+    'rgb(215, 210, 55)',
+    'rgb(0, 0, 0)'
+  ];
+
+  var EYES_COLOR_LIST = [
+    'black',
+    'red',
+    'blue',
+    'yellow',
+    'green'
+  ];
+
+  var arr = [];
+
   for (var i = 0; i < arrLength; i++) {
     arr[i] = {
       name: getRandomArrayItem(NAMES_LIST) + ' ' + getRandomArrayItem(SURNAMES_LIST),
@@ -55,6 +56,8 @@ var generateRandomWizards = function (arr, arrLength) {
       eyesColor: getRandomArrayItem(EYES_COLOR_LIST)
     };
   }
+
+  return arr;
 };
 
 var renderWizard = function (wizard, templateContent) {
@@ -83,6 +86,6 @@ var hiddenBlock = document.querySelector('.setup');
 
 hiddenBlock.classList.remove('hidden');
 
-generateRandomWizards(wisards, 4);
+var wisards = generateRandomWizards(4);
 
 renderWizards('#similar-wizard-template');
