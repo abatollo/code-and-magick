@@ -1,5 +1,7 @@
 'use strict';
 
+var WIZARDS_NUMBER = 4;
+
 var NAMES_LIST = [
   'Иван',
   'Хуан Себастьян',
@@ -90,7 +92,7 @@ var renderWizards = function (wisardsArray, templateId) {
   document.querySelector('.setup-similar').classList.remove('hidden');
 };
 
-var wisards = generateRandomWizards(4);
+var wisards = generateRandomWizards(WIZARDS_NUMBER);
 
 renderWizards(wisards, '#similar-wizard-template');
 
