@@ -9,16 +9,10 @@
   var setupClose = setup.querySelector('.setup-close');
 
   var onPopupEscPress = function (evt) {
-    window.util.isEscEvent(evt, closePopup);
+    if (document.activeElement !== setupUserName) {
+      window.util.isEscEvent(evt, closePopup);
+    }
   };
-
-  // var onPopupEscPress = function (evt) {
-  //   // Проверять находится ли в фокусе поле ввода надо с помощью document.activeElement или иначе?
-  //   if (evt.key === 'Escape' && (document.activeElement !== setupUserName)) {
-  //     evt.preventDefault();
-  //     closePopup();
-  //   }
-  // };
 
   setupOpen.addEventListener('click', function () {
     openPopup();
