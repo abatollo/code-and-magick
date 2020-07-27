@@ -33,7 +33,7 @@ window.renderStatistics = (function () {
     return maxElement;
   };
 
-  var foo = function (ctx, players, times) {
+  var renderScore = function (ctx, players, times) {
     renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
     renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
@@ -64,5 +64,5 @@ window.renderStatistics = (function () {
     }
   };
 
-  return foo;
+  return renderScore;
 })();

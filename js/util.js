@@ -16,17 +16,10 @@ window.util = (function () {
     }
   };
 
-  var getRandomArrayItem = function (arr) {
-    var randomArrayItem = arr[Math.floor(Math.random() * arr.length)];
-
-    return randomArrayItem;
-  };
-
   return {
     ESC_KEYCODE: ESC_KEYCODE,
     ENTER_KEYCODE: ENTER_KEYCODE,
     isEscEvent: isEscEvent,
-    isEnterEvent: isEnterEvent,
-    getRandomArrayItem: getRandomArrayItem
+    isEnterEvent: isEnterEvent
   };
 })();

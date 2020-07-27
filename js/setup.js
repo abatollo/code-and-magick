@@ -1,8 +1,8 @@
 'use strict';
 
-(function () {
+window.setup = (function () {
   var coatColor = 'rgb(101, 137, 164)';
-  var eyesColor= 'black';
+  var eyesColor = 'black';
   var wizards = [];
 
   var getRank = function (wizard) {
@@ -16,7 +16,7 @@
     }
 
     return rank;
-  }
+  };
 
   var updateWizards = function () {
     window.render(wizards.slice().
@@ -27,14 +27,14 @@
         }
         return rankDiff;
       }));
-  }
+  };
 
-  window.wizard.onEyesChange = window.debounce(function (color) {
+  window.wizard.onEyesChange = window.debounce.setDebounce(function (color) {
     eyesColor = color;
     updateWizards();
   });
 
-  window.wizard.onCoatChange = window.debounce(function (color) {
+  window.wizard.onCoatChange = window.debounce.setDebounce(function (color) {
     coatColor = color;
     updateWizards();
   });
@@ -54,7 +54,7 @@
 
     node.textContent = errorMessage;
     document.body.insertAdjacentElement('afterbegin', node);
-  }
+  };
 
   window.load(successHandler, errorHandler);
 })();

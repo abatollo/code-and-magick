@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+window.avatar = (function () {
   var FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
 
   var fileChooser = document.querySelector('.upload input[type=file]');
@@ -11,7 +11,7 @@
     var fileName = file.name.toLowerCase();
 
     var matches = FILE_TYPES.some(function (it) {
-     return fileName.endsWith(it);
+      return fileName.endsWith(it);
     });
 
     if (matches) {
