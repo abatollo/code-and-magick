@@ -2,7 +2,7 @@
 
 (function () {
   var coatColor = 'rgb(101, 137, 164)';
-  var eyesColor= 'black';
+  var eyesColor = 'black';
   var wizards = [];
 
   var getRank = function (wizard) {
@@ -16,7 +16,7 @@
     }
 
     return rank;
-  }
+  };
 
   var updateWizards = function () {
     window.render(wizards.slice().
@@ -27,7 +27,7 @@
         }
         return rankDiff;
       }));
-  }
+  };
 
   window.wizard.onEyesChange = window.debounce(function (color) {
     eyesColor = color;
@@ -54,7 +54,7 @@
 
     node.textContent = errorMessage;
     document.body.insertAdjacentElement('afterbegin', node);
-  }
+  };
 
   window.load(successHandler, errorHandler);
 })();

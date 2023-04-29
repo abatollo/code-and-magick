@@ -25,7 +25,7 @@
   var wizard = {
     onEyesChange: function (color) {},
     onCoatChange: function (color) {}
-  }
+  };
 
   var getRandomElement = function (array) {
     var randomElementIndex = Math.floor(Math.random() * array.length);
@@ -42,7 +42,7 @@
   });
 
   var wizardEyesElement = wizardElement.querySelector('.wizard-eyes');
-  console.log(wizardEyesElement);
+
   wizardEyesElement.addEventListener('click', function () {
     var newColor = getRandomElement(EYES_COLORS);
     this.style.fill = newColor;

@@ -1,7 +1,7 @@
 'use strict';
 
 window.load = (function () {
-  var URL = 'https://javascript.pages.academy/code-and-magick/data';
+  var URL = 'https://24.javascript.pages.academy/code-and-magick/data';
   var StatusCode = {
     OK: 200
   };

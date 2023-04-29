@@ -1,7 +1,7 @@
 'use strict';
 
 window.upload = (function () {
-  var URL = 'https://javascript.pages.academy/code-and-magick';
+  var URL = 'https://24.javascript.pages.academy/code-and-magick';
 
   var postData = function (data, onSuccess) {
     var xhr = new XMLHttpRequest();
