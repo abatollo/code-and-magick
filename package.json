@@ -1,6 +1,6 @@
 {
   "name": "code-and-magick",
-  "version": "19.0.19",
+  "version": "19.0.20",
   "private": true,
   "description": "Учебный проект «Код и Магия» от HTML Academy",
   "repository": {
@@ -20,6 +20,6 @@
     "test": "eslint js/"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
